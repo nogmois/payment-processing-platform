@@ -1,0 +1,59 @@
+{% extends 'partials/base.html' %} {% load static %} {% block content %}
+<!-- Login Reg start -->
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6 d-none d-md-block">
+        <img
+          src="{% static 'assets/images/login-reg-bg.png' %}"
+          class="img-fluid"
+          alt="Phone image"
+        />
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <div class="section-text text-center">
+            <h5 class="sub-title">Account</h5>
+            <h2 class="title">Welcome to Paylio</h2>
+            <p class="dont-acc">
+              Already have an account?
+              <a href="{% url 'sign-in' %}">Login</a>
+            </p>
+        </div>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-12">
+                <div class="single-input">
+                  <label class="form-label" for="form1Example23"
+                    >User Name</label
+                  >
+                  {{form.username}}
+                </div>
+                <div class="single-input">
+                  <label class="form-label" for="form1Example23">Email</label>
+                  {{form.email}}
+                </div>
+                <div class="single-input">
+                  <label class="form-label" for="form1Example23"
+                    >Password</label
+                  >
+                  {{form.password1}}
+                </div>
+                <div class="single-input">
+                  <label class="form-label" for="form1Example23"
+                    >Confirm Password</label
+                  >
+                  {{form.password2}}
+                </div>
+                <br />
+                <button class="cmn-btn w-100" type="submit">Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Login Reg end -->
+{% endblock content %}
