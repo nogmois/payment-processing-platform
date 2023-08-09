@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
+    
     <link
       rel="shortcut icon"
       href="{% static 'assets11/images/fav.png' %}"
@@ -242,7 +242,7 @@
                   <div class="main-area user-content">
                     <div class="head-area d-flex align-items-center">
                       <div class="profile-img">
-                        <!-- <img src="{% static 'assets1/images/avatar-2.png' %}" alt="User"> -->
+                         <img src="{% static 'assets1/images/avatar-2.png' %}" alt="User"> 
 
                         {% if request.user.kyc.image.url %}
                         <img
@@ -452,9 +452,11 @@
       </div>
       {% endfor %} {% endif %}
       <script>
-        setTimeout(() => {
-          $(".alert").alert("close");
-        }, 4000);
+        document.addEventListener("DOMContentLoaded", function() {
+          setTimeout(function(){
+            $(".alert").alert("close");
+          }, 4000);
+          });
       </script>
 
       <!-- alert end -->
